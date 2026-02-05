@@ -1,0 +1,62 @@
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px; /* gap-6 */
+  width: 80px; /* w-20 */
+  margin-right: 24px; /* mr-6 */
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.logoContainer {
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: 64px; /* w-16 */
+  height: 64px;
+  object-fit: contain;
+}
+
+/* 버튼 기본 스타일 */
+.menuButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+/* 아이콘 감싸는 div */
+.iconWrapper {
+  color: white;
+  transition: opacity 0.2s ease;
+}
+
+/* 활성화되지 않았을 때 투명도 */
+.inactive {
+  opacity: 0.8;
+}
+
+.menuButton:hover .iconWrapper {
+  opacity: 1;
+}
+
+/* 레트로 아이콘 외곽선 효과 */
+.retroIcon {
+  font-size: 60px !important; /* text-4xl */
+  filter: drop-shadow(0 0 1px #90AFFF);
+}
+
+/* 아이콘 밑 텍스트 */
+.menuLabel {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -0.05em; /* tracking-tighter */
+}

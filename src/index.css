@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+
+:root {
+    --primary-color: #90AFFF;
+    --secondary-color: #E6FFE6;
+}
+
+/* 원본 배경 설정 */
+.grid-pattern {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.grid-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.window-outer {
+    box-shadow: 0 10px 30px rgba(144, 175, 255, 0.3);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.retro-outline-icon {
+    filter: drop-shadow(0 0 1px #90AFFF);
+}
+
+/* 질문자님의 커스텀 스타일 */
+.grid-pattern {
+  background: linear-gradient(135deg, #90AFFF 0%, #E6FFE6 100%);
+  position: relative;
+}
+.grid-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+.window-outer { box-shadow: 0 10px 30px rgba(144, 175, 255, 0.3); }

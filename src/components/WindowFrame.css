@@ -1,0 +1,93 @@
+.windowOuter {
+  background-color: white;
+  border: 2px solid #90AFFF; /* retro-blue */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px; /* rounded-sm */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(144, 175, 255, 0.3); /* window-outer shadow */
+}
+
+/* 타이틀 바 */
+.titleBar {
+  background-color: #90AFFF;
+  padding: 6px 12px; /* p-1.5 px-3 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleText {
+  color: white;
+  font-family: sans-serif;
+  font-size: 12px; /* text-xs */
+  font-weight: 600;
+  letter-spacing: -0.025em; /* tracking-tight */
+  text-transform: uppercase;
+}
+
+/* 윈도우 컨트롤 버튼 */
+.controlBtn {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #BFDBFE; /* border-blue-300 */
+  cursor: pointer;
+}
+
+.controlIcon {
+  font-size: 14px !important;
+}
+
+/* 메뉴 바 */
+.menuBar {
+  background-color: white;
+  border-bottom: 1px solid rgba(144, 175, 255, 0.2); /* border-retro-blue/20 */
+  padding: 4px 16px; /* py-1 px-4 */
+  display: flex;
+  gap: 16px; /* gap-4 */
+  font-size: 11px;
+  font-weight: 500;
+  color: #64748b; /* text-slate-500 */
+}
+
+.menuItem {
+  cursor: default;
+  transition: color 0.2s;
+}
+
+.menuItem:hover {
+  color: #90AFFF;
+}
+
+/* 실제 내용이 들어가는 영역 */
+.contentArea {
+  flex: 1;
+  padding: 24px; /* p-6 */
+  overflow-y: auto;
+  background-color: #F8FAFF;
+}
+
+/* 하단 상태바 */
+.statusBar {
+  background-color: #F2F7FF;
+  padding: 6px 16px; /* py-1.5 px-4 */
+  border-top: 1px solid rgba(144, 175, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: rgba(144, 175, 255, 0.7); /* text-retro-blue/70 */
+  font-family: monospace;
+}
+
+.statusReady {
+  font-weight: 700;
+  color: #90AFFF;
+  text-transform: uppercase;
+}

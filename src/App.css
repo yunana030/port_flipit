@@ -1,0 +1,133 @@
+/* 1. 기본 브라우저 여백 제거 (매우 중요) */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  text-align: left;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/*상세 css */
+.screenWrapper {
+  font-family: 'Inter', sans-serif;
+  color: #334155;
+  
+  /* 화면 전체를 꽉 채우기 위한 설정 */
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  
+  /* 배경 설정 (이제 화면을 다 덮습니다) */
+  background: linear-gradient(135deg, #90AFFF 0%, #E6FFE6 100%);
+  background-attachment: fixed; /* 스크롤 해도 배경 고정 */
+  position: relative;
+  
+  /* 내용물을 중앙에 배치 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 격자 패턴도 화면 전체에 깔리도록 */
+.screenWrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 메인 레이아웃 (실제 창 크기) */
+.mainLayout {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1152px;
+  height: 85vh; /* 화면 높이의 85%만 차지 */
+  z-index: 10;
+  margin: 20px; /* 화면 끝에 너무 붙지 않게 여유 */
+}
+@media (min-width: 1024px) {
+  .screenWrapper {
+    padding: 32px; /* lg:p-8 */
+  }
+}
+
+
+.windowArea {
+  flex: 1;
+  position: relative;
+}
+
+/* 우측 하단 팔레트 버튼 */
+.paletteBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border: 2px solid #90AFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  z-index: 50;
+  cursor: pointer;
+}
+
+.paletteBtn:hover {
+  transform: scale(1.1);
+}
