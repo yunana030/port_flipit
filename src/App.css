@@ -9,6 +9,7 @@ html, body {
 #root {
   width: 100%;
   min-height: 100vh;
+
   text-align: left;
 }
 
@@ -61,7 +62,7 @@ html, body {
   padding: 0;
   
   /* 배경 설정 (이제 화면을 다 덮습니다) */
-  background: linear-gradient(135deg, #90AFFF 0%, #E6FFE6 100%);
+  background: linear-gradient(135deg, #90AFFF 0%, #99eeae 100%);
   background-attachment: fixed; /* 스크롤 해도 배경 고정 */
   position: relative;
   
@@ -92,7 +93,7 @@ html, body {
   position: relative;
   display: flex;
   width: 100%;
-  max-width: 1152px;
+  max-width: 1280px;
   height: 85vh; /* 화면 높이의 85%만 차지 */
   z-index: 10;
   margin: 20px; /* 화면 끝에 너무 붙지 않게 여유 */

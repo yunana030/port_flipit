@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import WindowFrame from './components/windowFrame';
 import MainHome from './pages/MainHome';
-import './App.css'; // 일반 CSS 임포트
+// 1. Flow 컴포넌트를 불러옵니다!
+import Flow from './pages/Flow'; 
+import './App.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState('Main');
@@ -10,15 +12,15 @@ function App() {
   return (
     <div className="screenWrapper">
       <div className="mainLayout">
-        
-        {/* 사이드바 컴포넌트 */}
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        {/* 메인 윈도우 영역 */}
         <div className="windowArea">
           <WindowFrame title={activeTab.toUpperCase()}>
+            {/* 2. 조건문을 확장합니다 */}
             {activeTab === 'Main' ? (
               <MainHome />
+            ) : activeTab === 'DFD' ? (
+              <Flow /> /* DFD 탭을 누르면 우리가 만든 Flow가 뜹니다! */
             ) : (
               <div className="text-2xl font-display p-10">
                 {activeTab} Page Ready.
@@ -28,7 +30,6 @@ function App() {
         </div>
       </div>
 
-      {/* 테마 변경 버튼 */}
       <button className="paletteBtn">
         <span className="material-symbols-outlined text-retro-blue">palette</span>
       </button>

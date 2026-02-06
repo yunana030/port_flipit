@@ -1,0 +1,60 @@
+/* Flow.css */
+
+/* 1. User (Actor) 색상 복구 */
+.mermaid .actor {
+  fill: #f0f8ff !important;
+  stroke: #70b5e8 !important;
+}
+.mermaid line.actor-line {
+  stroke: #70b5e8 !important;
+}
+
+/* 2. Client 박스 (User 다음 첫 번째 박스) - 주황색 */
+.mermaid g.participant:nth-of-type(1) rect,
+.mermaid [id^="participant-Client"] rect {
+  fill: #ffb347 !important;
+  stroke: #e69500 !important;
+}
+
+/* 3. Server 박스 (그 다음 두 번째 박스) - 연두색 */
+.mermaid g.participant:nth-of-type(2) rect,
+.mermaid [id^="participant-Server"] rect {
+  fill: #b4e197 !important;
+  stroke: #88b04b !important;
+}
+
+/* 4. 활성화 바 (세로 막대) - 회색 */
+.mermaid g.activation rect {
+  fill: #D3D3D3 !important;
+  stroke: #BDBDBD !important;
+}
+
+/* 5. alt/else 박스 - 황토색 테두리 */
+.mermaid rect.loopBox {
+  fill: rgba(234, 234, 200, 0.1) !important;
+  stroke: #C5C595 !important;
+  stroke-width: 2px !important;
+}
+.mermaid rect.labelBox {
+  fill: #C5C595 !important;
+  stroke: #C5C595 !important;
+}
+
+/* 6. 화살표 및 점선 스타일 고정 */
+.mermaid .messageLine0 { /* 실선 */
+  stroke: #333 !important;
+}
+.mermaid .messageLine1 { /* 점선 */
+  stroke: #333 !important;
+  stroke-dasharray: 6, 4 !important;
+}
+
+/* 7. 텍스트 가독성 */
+.mermaid text {
+  font-family: 'Pretendard', sans-serif !important;
+  fill: #333 !important;
+}
+.mermaid .loopText, .mermaid .loopText > tspan {
+  fill: #333 !important;
+  font-weight: bold !important;
+}
