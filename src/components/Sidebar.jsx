@@ -4,10 +4,10 @@ import './Sidebar.css'; // 일반 CSS 파일 불러오기
 const Sidebar = ({ activeTab, setActiveTab }) => {
   const menuItems = [
     { id: 'Main', icon: 'grid_view' },
-    { id: 'DFD', icon: 'description' },
-    { id: 'ERD', icon: 'account_tree' },
-    { id: 'Fixes', icon: 'terminal' },
-    { id: 'Gallery', icon: 'mail' }
+    { id: 'SEQUENCE', icon: 'description' },
+    { id: 'ERD / UseCase', icon: 'account_tree' },
+    { id: 'Trouble Shooting', icon: 'auto_fix_high' },
+    { id: 'Gallery', icon: 'photo_library' }
   ];
 
   return (
@@ -25,7 +25,8 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
               {item.icon}
             </span>
           </div>
-          <span className="menuLabel">{item.id}</span>
+          {/* 아이콘 이름 */}
+          <span className="menuLabel">{item.id}</span>  
         </button>
       ))}
     </nav>

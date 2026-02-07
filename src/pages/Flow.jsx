@@ -62,10 +62,18 @@ const Flow = () => {
   `;
 
   return (
-    <div style={{ padding: '20px', background: '#fff', minHeight: '100vh' }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Game Logic Flow</h2>
-      <div className="mermaid" style={{ display: 'flex', justifyContent: 'center' }}>
-        {chartCode}
+    <div className="flowRootContainer">
+      <div className="flowCard">
+        {/* ERD와 똑같은 스타일의 제목! */}
+        <div className="titleWrapper">
+          <h3 className="simpleTitle">GAME LOGIC SEQUENCE</h3>
+        </div>
+        
+        <div className="mermaidContainer">
+          <div className="mermaid">
+            {chartCode}
+          </div>
+        </div>
       </div>
     </div>
   );

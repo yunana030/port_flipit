@@ -8,7 +8,7 @@ const WindowFrame = ({ title, children }) => {
       <div className="titleBar">
         <div className="flex items-center gap-2">
           <span className="titleText">
-            PROJECT_{title}_BROWSER.EXE
+            FlipIt!_{title}
           </span>
         </div>
         <div className="flex gap-1">

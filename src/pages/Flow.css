@@ -58,3 +58,53 @@
   fill: #333 !important;
   font-weight: bold !important;
 }
+
+/* 제목 추가 */
+/* 전체 배경 컨테이너 */
+.flowRootContainer {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 다이어그램을 감싸는 카드 */
+.flowCard {
+  width: 100%;
+  max-width: 900px; /* 시퀀스는 가로로 기니까 넉넉하게! */
+}
+
+/* 제목 정렬을 위한 래퍼 */
+.titleWrapper {
+  text-align: left; /* 왼쪽 정렬 */
+  margin-bottom: 25px;
+}
+
+/* [핵심] ERD.jsx에서 썼던 그 제목 스타일! */
+.simpleTitle {
+  font-family: 'font-display', sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px;
+  color: #4A5568;
+  border-bottom: 3px solid #B2C8DF;
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-right: 20px;
+}
+
+/* 머메이드 다이어그램 박스 */
+.mermaidContainer {
+  background: #ffffff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  overflow-x: auto; 
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
+}
+
+.mermaid {
+  width: 100%;
+}

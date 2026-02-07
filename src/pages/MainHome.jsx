@@ -4,7 +4,7 @@ import './MainHome.css';
 const MainHome = () => {
   return (
     <>
-      {/* 1. 상단 배너 섹션 */}
+      {/* 1. 상단 배너 섹션 -> 프로젝트 이름이 잇는 배너로 바꾸는 게 좋을 듯 */}
       <div className="banner">
         <div className="dotPattern"></div>
         <div className="relative z-10 flex w-full h-full p-4 items-center justify-between">
@@ -24,7 +24,7 @@ const MainHome = () => {
       {/* 2. 하단 그리드 섹션 */}
       <div className="mainGrid">
         <div className="leftCol">
-          {/* 연락처 박스 */}
+          {/* 연락처 박스 -> 프로젝트 소개 멘트 */}
           <div className="card">
             <h3 className="cardTitle">연락처 (CONTACT)</h3>
             <div className="space-y-4">
@@ -33,7 +33,7 @@ const MainHome = () => {
             </div>
           </div>
 
-          {/* D-Day 박스 */}
+          {/* D-Day 박스 -> v프로젝트 진행기간 및 기여도, D데이 부분은 그냥 총 며칠로 그대로 가져가기 */}
           <div className="ddayCard">
             <p className="text-[10px] text-retro-blue font-bold uppercase mb-1">2025. 04. 25</p>
             <h2 className="ddayBigText">D-110</h2>
@@ -48,7 +48,7 @@ const MainHome = () => {
           </div>
         </div>
 
-        {/* 오른쪽: 새소식 */}
+        {/* 오른쪽: 새소식 -> 유뷰트 영상 썸네일 및 +재생바 디자인으로 바꾸고 싶음*/}
         <div className="rightCol">
           <div className="card h-full">
             <div className="flex justify-between items-center mb-6 border-b border-retro-blue/20 pb-2">

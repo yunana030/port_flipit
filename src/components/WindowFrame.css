@@ -1,93 +1,111 @@
+/* 전체 창 외곽 */
 .windowOuter {
-  background-color: white;
-  border: 2px solid #90AFFF; /* retro-blue */
+  background: linear-gradient(135deg, #E0F2FE 0%, #D1E1F0 40%, #E9D5FF 100%);
+  border: 3px solid #B2C8DF; 
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 2px; /* rounded-sm */
+  border-radius: 20px; 
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(144, 175, 255, 0.3); /* window-outer shadow */
+  box-shadow: 8px 8px 0px #D1E1F0;
 }
 
 /* 타이틀 바 */
 .titleBar {
-  background-color: #90AFFF;
-  padding: 6px 12px; /* p-1.5 px-3 */
+  background: rgba(255, 255, 255, 0.3); /* 반투명 화이트로 화사함 추가 */
+  backdrop-filter: blur(5px); /* 뒤쪽 색감을 살짝 흐리게 해서 고급스럽게 */
+  padding: 12px 18px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid #B2C8DF;
 }
 
 .titleText {
-  color: white;
-  font-family: sans-serif;
-  font-size: 12px; /* text-xs */
-  font-weight: 600;
-  letter-spacing: -0.025em; /* tracking-tight */
+  color: #6D8299; /* 하얀색 대신 톤 다운된 블루 */
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-/* 윈도우 컨트롤 버튼 */
+/* 윈도우 컨트롤 버튼 (동그랗게 바꿔서 레트로 느낌 삭제!) */
 .controlBtn {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #BFDBFE; /* border-blue-300 */
+  border: 2px solid #B2C8DF; 
+  border-radius: 50%; /* 네모 버튼을 동그라미로! */
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.controlBtn:hover {
+  transform: scale(1.1);
+  background-color: #FFCFDF; /* 호버 시 핑크색 포인트 */
+  border-color: #FFAFCC;
 }
 
 .controlIcon {
-  font-size: 14px !important;
+  font-size: 12px !important;
+  color: #B2C8DF;
 }
 
 /* 메뉴 바 */
 .menuBar {
-  background-color: white;
-  border-bottom: 1px solid rgba(144, 175, 255, 0.2); /* border-retro-blue/20 */
-  padding: 4px 16px; /* py-1 px-4 */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px dashed #B2C8DF;
+  padding: 8px 16px; 
   display: flex;
-  gap: 16px; /* gap-4 */
-  font-size: 11px;
-  font-weight: 500;
-  color: #64748b; /* text-slate-500 */
-}
-
-.menuItem {
-  cursor: default;
-  transition: color 0.2s;
+  gap: 20px; 
+  font-size: 12px;
+  font-weight: 700;
+  color: #6D8299; /* 글씨색을 조금 더 진하게 해서 가독성 확보 */
 }
 
 .menuItem:hover {
-  color: #90AFFF;
+  color: #FFAFCC; /* 핑크색 강조 */
 }
 
-/* 실제 내용이 들어가는 영역 */
+/* 실제 내용 영역 (모눈종이 배경 추가) */
 .contentArea {
   flex: 1;
-  padding: 24px; /* p-6 */
+  margin: 10px; /* 창 테두리에서 살짝 띄우면 더 예뻐요 */
+  padding: 24px;
   overflow-y: auto;
-  background-color: #F8FAFF;
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  /* background-size: 24px 24px; */
+  background-color: #fafafa;
+
+  background-image: 
+
+    linear-gradient(rgba(114, 163, 239, 0.05) 1px, transparent 1px),
+
+    linear-gradient(90deg, rgba(114, 163, 239, 0.05) 1px, transparent 1px);
+
+  background-size: 20px 20px
 }
 
 /* 하단 상태바 */
 .statusBar {
-  background-color: #F2F7FF;
-  padding: 6px 16px; /* py-1.5 px-4 */
-  border-top: 1px solid rgba(144, 175, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-top: 2px solid #B2C8DF;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10px;
-  color: rgba(144, 175, 255, 0.7); /* text-retro-blue/70 */
-  font-family: monospace;
+  font-size: 11px;
+  color: #6D8299;
+  font-family: 'Pretendard', sans-serif;
 }
 
 .statusReady {
-  font-weight: 700;
-  color: #90AFFF;
+  font-weight: 800;
+  color: #8E9AAF; /* 조금 더 부드러운 색 */
   text-transform: uppercase;
 }

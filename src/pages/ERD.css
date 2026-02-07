@@ -1,0 +1,59 @@
+/* 1. 전체 바구니: 평소엔 가로, 좁아지면 줄바꿈 */
+.diagramRootContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;       /* 화면 좁으면 아래로 내려감 */
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. 카드 영역: 너비 유연하게 조절 */
+.diagramCard {
+  flex: 1 1 450px;       /* 최소 450px 확보하고 공간 있으면 늘어남 */
+  max-width: 550px;      /* 너무 커지는 건 방지 */
+  transition: all 0.4s ease;
+}
+
+/* 3. 호버 효과: 내가 보는 것만 살리고 나머지는 흐릿하게 */
+.diagramRootContainer:hover .diagramCard {
+  filter: grayscale(80%) blur(2px);
+  opacity: 0.5;
+}
+
+.diagramRootContainer .diagramCard:hover {
+  filter: grayscale(0%) blur(0);
+  opacity: 1;
+}
+
+/* 4. 제목: 한 줄로 담백하게 */
+.simpleTitle {
+  font-family: 'font-display', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #4A5568;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #B2C8DF;
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-right: 15px;
+}
+
+/* 5. 이미지: 박스 크기에 맞춰서 자동 조절 */
+.imgWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 14; /* 대략적인 비율 유지 (이미지 크기 맞춤용) */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fitImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* 이미지 안 잘리고 쏙 들어가게 */
+  display: block;
+}
