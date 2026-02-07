@@ -81,14 +81,19 @@
   /* background-color: rgba(255, 255, 255, 0.9); */
   /* background-size: 24px 24px; */
   background-color: #fafafa;
-
   background-image: 
-
     linear-gradient(rgba(114, 163, 239, 0.05) 1px, transparent 1px),
-
     linear-gradient(90deg, rgba(114, 163, 239, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  /* ====== 핵심 ★★★ ====== */
+  /* display: flex;
+  justify-content: center;
+  align-items: stretch; */
 
-  background-size: 20px 20px
+  display: block;   /* ← flex ❌ */
+  align-items: unset;
+  justify-content: unset;
+
 }
 
 /* 하단 상태바 */

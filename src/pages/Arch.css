@@ -1,0 +1,56 @@
+.archRootContainer {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.archCard {
+  width: 100%;
+  max-width: 1100px; 
+}
+
+.simpleTitle {
+  font-family: 'font-display', sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #4A5568;
+  border-bottom: 3px solid #B2C8DF;
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-right: 20px;
+  margin-bottom: 40px;
+}
+
+.archFlexWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+
+.archItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.archImg {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.05));
+}
+
+@media (max-width: 768px) {
+  .archRootContainer {
+    padding: 20px 10px;
+  }
+  .archImg {
+    max-width: 100%;
+  }
+}

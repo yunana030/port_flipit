@@ -4,8 +4,9 @@ import './Sidebar.css'; // 일반 CSS 파일 불러오기
 const Sidebar = ({ activeTab, setActiveTab }) => {
   const menuItems = [
     { id: 'Main', icon: 'grid_view' },
-    { id: 'SEQUENCE', icon: 'description' },
-    { id: 'ERD / UseCase', icon: 'account_tree' },
+    { id: 'SEQUENCE', icon: 'sync_alt' },
+    { id: 'ARCHITECTURE', icon: 'hub'},
+    { id: 'ERD / UseCase', icon: 'schema' },
     { id: 'Trouble Shooting', icon: 'auto_fix_high' },
     { id: 'Gallery', icon: 'photo_library' }
   ];

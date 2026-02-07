@@ -1,92 +1,24 @@
-/* Flow.css */
-
-/* 1. User (Actor) 색상 복구 */
-.mermaid .actor {
-  fill: #f0f8ff !important;
-  stroke: #70b5e8 !important;
-}
-.mermaid line.actor-line {
-  stroke: #70b5e8 !important;
-}
-
-/* 2. Client 박스 (User 다음 첫 번째 박스) - 주황색 */
-.mermaid g.participant:nth-of-type(1) rect,
-.mermaid [id^="participant-Client"] rect {
-  fill: #ffb347 !important;
-  stroke: #e69500 !important;
-}
-
-/* 3. Server 박스 (그 다음 두 번째 박스) - 연두색 */
-.mermaid g.participant:nth-of-type(2) rect,
-.mermaid [id^="participant-Server"] rect {
-  fill: #b4e197 !important;
-  stroke: #88b04b !important;
-}
-
-/* 4. 활성화 바 (세로 막대) - 회색 */
-.mermaid g.activation rect {
-  fill: #D3D3D3 !important;
-  stroke: #BDBDBD !important;
-}
-
-/* 5. alt/else 박스 - 황토색 테두리 */
-.mermaid rect.loopBox {
-  fill: rgba(234, 234, 200, 0.1) !important;
-  stroke: #C5C595 !important;
-  stroke-width: 2px !important;
-}
-.mermaid rect.labelBox {
-  fill: #C5C595 !important;
-  stroke: #C5C595 !important;
-}
-
-/* 6. 화살표 및 점선 스타일 고정 */
-.mermaid .messageLine0 { /* 실선 */
-  stroke: #333 !important;
-}
-.mermaid .messageLine1 { /* 점선 */
-  stroke: #333 !important;
-  stroke-dasharray: 6, 4 !important;
-}
-
-/* 7. 텍스트 가독성 */
-.mermaid text {
-  font-family: 'Pretendard', sans-serif !important;
-  fill: #333 !important;
-}
-.mermaid .loopText, .mermaid .loopText > tspan {
-  fill: #333 !important;
-  font-weight: bold !important;
-}
-
-/* 제목 추가 */
-/* 전체 배경 컨테이너 */
 .flowRootContainer {
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* 다이어그램을 감싸는 카드 */
 .flowCard {
   width: 100%;
-  max-width: 900px; /* 시퀀스는 가로로 기니까 넉넉하게! */
+  max-width: 1100px;
 }
 
-/* 제목 정렬을 위한 래퍼 */
 .titleWrapper {
-  text-align: left; /* 왼쪽 정렬 */
-  margin-bottom: 25px;
+  text-align: left;
 }
 
-/* [핵심] ERD.jsx에서 썼던 그 제목 스타일! */
 .simpleTitle {
   font-family: 'font-display', sans-serif !important;
   font-size: 1.25rem !important;
   font-weight: 800 !important;
-  letter-spacing: 0.5px;
   color: #4A5568;
   border-bottom: 3px solid #B2C8DF;
   display: inline-block;
@@ -94,17 +26,41 @@
   padding-right: 20px;
 }
 
-/* 머메이드 다이어그램 박스 */
-.mermaidContainer {
+.flowImageContent {
+  width: 100%;
   background: #ffffff;
-  padding: 40px 20px;
   border-radius: 12px;
-  overflow-x: auto; 
+  border: 1px solid #f0f4f8;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  
+  /* 부모 레이아웃 정렬 */
   display: flex;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
 }
 
-.mermaid {
-  width: 100%;
+.flowItem {
+  width: 100%; /* 부모 안에서 꽉 차게 */
+  display: flex;
+  justify-content: center; /* 가로 중앙 */
+  align-items: center;     /* 세로 중앙 */
+}
+
+.flowImg {
+  width: 70%; /* 여기서 크기 조절하면 무조건 가운데 정렬! */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .flowRootContainer {
+    padding: 20px 10px;
+  }
+  .flowImageContent {
+    padding: 10px;
+  }
+  .flowImg {
+    width: 100%; /* 모바일은 작으니까 꽉 채워 보여주기 */
+  }
 }

@@ -1,8 +1,10 @@
-/* 상단 배너 섹션 */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Plus+Jakarta+Sans:wght@700;800&family=Syne:wght@700;800&family=DM+Serif+Display&display=swap');
+/* ========== 상단 배너 ========== */
 .banner {
   position: relative;
   width: 100%;
-  height: 256px; /* h-64 */
+  height: 256px;
   background-color: white;
   border: 1px solid rgba(144, 175, 255, 0.3);
   margin-bottom: 24px;
@@ -21,21 +23,38 @@
   background-size: 15px 15px;
 }
 
-/* 하단 그리드 레이아웃 */
+/* ========== 하단 그리드 (⭐ 핵심 복구) ========== */
 .mainGrid {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(12, 1fr);
   gap: 24px;
+  grid-auto-flow: row;   /* 행 기준 배치 강제 */
 }
 
-.leftCol { grid-column: span 4; display: flex; flex-direction: column; gap: 24px; }
-.rightCol { grid-column: span 8; }
+/* 왼쪽: 4칸, 세로로 두 개 쌓기 */
+.leftCol { 
+  grid-column: span 4; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 24px; 
+}
 
-/* 공통 카드 스타일 */
+/* 오른쪽: 8칸, 한 덩어리 */
+.rightCol { 
+  grid-column: span 8; 
+}
+
+/* 깨짐 방지 */
+.leftCol, .rightCol {
+  min-width: 0;
+}
+
+/* ========== 공통 카드 ========== */
 .card {
   background-color: white;
   border: 1px solid rgba(144, 175, 255, 0.3);
-  padding: 16px; /* p-4 */
+  padding: 16px;
   border-radius: 2px;
 }
 
@@ -49,7 +68,7 @@
   padding-bottom: 8px;
 }
 
-/* D-Day 박스 전용 */
+/* ========== D-DAY 카드 ========== */
 .ddayCard {
   background-color: #D9E6FF;
   border: 1px solid rgba(144, 175, 255, 0.3);
@@ -63,7 +82,7 @@
 
 .ddayBigText {
   font-family: 'VT323', monospace;
-  font-size: 3rem; /* text-5xl */
+  font-size: 3rem;
   color: #90AFFF;
   line-height: 1;
 }
@@ -78,11 +97,16 @@
   overflow: hidden;
 }
 
-.progressBlock { height: 100%; width: 8px; background-color: #90AFFF; margin-right: 1px; }
+.progressBlock { 
+  height: 100%; 
+  width: 8px; 
+  background-color: #90AFFF; 
+  margin-right: 1px; 
+}
 .progressBlockDim { background-color: rgba(144, 175, 255, 0.3); }
 .progressBlockEmpty { background-color: rgba(144, 175, 255, 0.1); }
 
-/* 새소식 아이템 */
+/* ========== 새소식 아이템 ========== */
 .updateItem {
   display: flex;
   align-items: center;
@@ -97,4 +121,81 @@
   font-size: 10px;
   font-family: monospace;
   border: 1px solid rgba(144, 175, 255, 0.2);
+}
+
+
+/* 배너영역 */
+
+
+.font-display.text-retro-blue {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 5rem;
+  color: #FFFFFF;
+  letter-spacing: -2px; 
+  text-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* 3. 환영 멘트:*/
+.welcome-box p {
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  border-left: none;
+  padding-left: 0;
+}
+.welcome-sub {
+  font-size: 1rem; 
+  color: #FFFFFF;
+  font-style: italic;
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.8), 
+    0px 0px 10px rgba(0, 0, 0, 0.5),
+    0px 0px 20px rgba(0, 0, 0, 0.3);  
+}
+/* 돌아가기 버튼 그룹 전체 스타일 */
+.group {
+  font-weight: 500;
+}
+.group span {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* 상단 작은 텍스트 (RETURN TO INDEX) */
+.group span:first-child {
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+/* 중간 구분선 */
+.group div {
+  height: 1.5px !important; 
+  background-color: rgba(255, 255, 255, 0.8); 
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* 선에서도 빛이 나게 */
+}
+
+/* 하단 큰 텍스트 (Back portfolio) */
+.group span:last-child {
+  font-size: 13px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 개발환경 */
+/* Tailwind가 안 먹힐 때를 대비한 백업용 CSS */
+.tech-block {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  margin: 2px;
 }

@@ -6,6 +6,9 @@ import MainHome from './pages/MainHome';
 import Flow from './pages/Flow'; 
 import './App.css';
 import ERD from './pages/erd';
+import Arch from './pages/Arch';
+import Troubleshooting from './pages/Troubleshooting';
+import Gallery from './pages/Gallery';
 
 function App() {
   const [activeTab, setActiveTab] = useState('Main');
@@ -16,20 +19,15 @@ function App() {
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         {/* 사이드바에사 보낸 id와 같아야 함! */}
         <div className="windowArea">
-          <WindowFrame title={activeTab.toUpperCase()}>
-            {/* 2. 조건문을 확장합니다 */}
-            {activeTab === 'Main' ? (
-              <MainHome />
-            ) : activeTab === 'SEQUENCE' ? (
-              <Flow /> /* DFD 탭을 누르면 우리가 만든 Flow가 뜹니다! */
-            ) : activeTab === 'ERD / UseCase' ? (
-              <ERD />
-            ) : (
-              <div className="text-2xl font-display p-10">
-                {activeTab} Page Ready.
-              </div>
-            )}
-          </WindowFrame>
+         <WindowFrame title={activeTab.toUpperCase()}>
+          {/* && 연산자는 "조건이 맞으면 뒤의 컴포넌트를 보여줘라"라는 뜻이에요! */}
+          {activeTab === 'Main' && <MainHome />}
+          {activeTab === 'SEQUENCE' && <Flow />}
+          {activeTab === 'ERD / UseCase' && <ERD />}
+          {activeTab === 'ARCHITECTURE' && <Arch />}
+          {activeTab === 'Trouble Shooting' && <Troubleshooting />}
+          {activeTab === 'Gallery' && <Gallery />}
+        </WindowFrame>
         </div>
       </div>
 

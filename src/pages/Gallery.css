@@ -1,0 +1,82 @@
+.galleryRootContainer { display: flex; justify-content: center; width: 100%; }
+.galleryCard { width: 100%; max-width: 1100px; }
+
+.galleryImageContent {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 460px;      /* ← 500px 대신 이걸 쓰는 게 핵심 */
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  cursor: grab;
+}
+
+
+/* JS가 제어하는 애니메이션 트랙 (원본 그대로) */
+.animate-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.galleryItem {
+  margin: 0 15px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.galleryImg {
+  height: auto;
+  max-height: 450px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+
+/* --- 썸네일 & 오버레이 스타일 (건드리지 않음) --- */
+.thumbnailBar { display: flex; gap: 10px; margin-bottom: 20px; }
+.thumbItem { width: 110px; height: 60px; cursor: pointer; border-radius: 6px; overflow: hidden; opacity: 0.6; }
+.thumbItem:hover { opacity: 1; transform: translateY(-3px); }
+.thumbImg { width: 100%; height: 100%; object-fit: cover; }
+
+.hoverOverlay { 
+  position: absolute; 
+  inset: 0; 
+  display: none; 
+  align-items: center; 
+  justify-content: center; 
+  opacity: 0; 
+  transition: opacity 0.3s; 
+  border-radius: 8px;
+}
+
+/* 호버 효과 복구: 확대 + 오버레이 노출 */
+.galleryItem:hover .galleryImg { transform: scale(1.1); }
+.galleryItem:hover .hoverOverlay { opacity: 1; }
+
+/* 📱 윈도우 프레임 안에서 이미지가 안 잘리게 높이만 비례 조절 */
+@media (max-width: 768px) {
+  .galleryImg {
+    max-height: 320px;
+  }
+  .thumbItem {
+    width: 70px;
+    height: 40px;
+  }
+}
+
+.galleryRootContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.galleryCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
