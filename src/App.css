@@ -100,17 +100,13 @@ html, body {
   }
 }
 
-
-/* .windowArea {
-  flex: 1;
-  position: relative;
-} */
 .windowArea {
   flex: 1;
   display: flex;
   align-items: stretch;
   overflow: hidden;   /* 다시 hidden이 맞음 */
   position: relative;
+  border-radius: 20px;
 }
 
 

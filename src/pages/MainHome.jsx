@@ -35,7 +35,7 @@ const MainHome = () => {
           {/* 오른쪽 하단: 돌아가기 버튼 (텍스트 위주) */}
           <div className="absolute bottom-6 right-8">
             <a 
-              href="/" 
+              href="https://yunana030.github.io/nanaful_day/" 
               className="group flex flex-col items-end gap-1 no-underline"
             >
               {/* 얇은 화살표와 텍스트 조합 */}
